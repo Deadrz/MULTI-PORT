@@ -133,7 +133,7 @@ echo -e "$COLOR1└────────────────────�
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC}  $COLOR1[INFO]${NC} Check for Script updates"
 sleep 2
-wget -q -O /root/install_up.sh "https://raw.githubusercontent.com/kenDevXD/update/main/install-up.sh" && chmod +x /root/install_up.sh
+wget -q -O /root/install_up.sh "https://raw.githubusercontent.com/SandakanVPNTrickster/update/main/install-up.sh" && chmod +x /root/install_up.sh
 sleep 2
 ./install_up.sh
 sleep 5
@@ -208,7 +208,7 @@ else
 up2u="menu"
 fi
 
-DATE=$(date +'%d %B %Y')
+DATE=$(date +'%Y-%m-%d')
 datediff() {
     d1=$(date -d "$1" +%s)
     d2=$(date -d "$2" +%s)
