@@ -283,8 +283,8 @@ sed -i '/#vlessgrpc$/a\#& '"$user $exp"'\
 vlesslink1="vless://${uuid}@$who.int:$tls?path=wss://who.int/vlessws&security=tls&encryption=none&type=ws&sni=who.int&host${domain}=#${user}"
 vlesslink2="vless://${uuid}@${domain}:$none?path=/vlessws&encryption=none&type=ws#${user}"
 vlesslink3="vless://${uuid}@${domain}:$tls?mode=gun&security=tls&encryption=none&type=grpc&serviceName=vless-grpc&sni=bug.com#${user}"
-maxis="vless://${uuid}@$who.int:$tls?path=wss://who.int/vlessws&security=tls&encryption=none&type=ws&sni=who.int&host=${domain}#SquidVPN_Maxis_${user} exp : $exp"
-celcom="vless://${uuid}@$onlinepayment.celcom.com.my:$tls?path=wss://onlinepayment.celcom.com.my/vlessws&security=tls&encryption=none&type=ws&sni=onlinepayment.celcom.com.my&host=${domain}#SquidVPN_Celcom_${user} exp : $exp"
+maxis="vless://${uuid}@who.int:$tls?path=wss://who.int/vlessws&security=tls&encryption=none&type=ws&sni=who.int&host=${domain}#SquidVPN_Maxis_${user} exp : $exp"
+celcom="vless://${uuid}@onlinepayment.celcom.com.my:$tls?path=wss://onlinepayment.celcom.com.my/vlessws&security=tls&encryption=none&type=ws&sni=onlinepayment.celcom.com.my&host=${domain}#SquidVPN_Celcom_${user} exp : $exp"
 digi="vless://${uuid}@162.159.134.61:$none?path=/vlessws&encryption=none&type=ws&host=${domain}#SquidVPN_Digi_${user} exp : $exp"
 yess="vless://${uuid}@cdn.who.int:$none?path=wss://cdn.who.int/vlessws&encryption=none&type=ws&host=${domain}#SquidVPN_Digi_${user} exp : $exp"
 systemctl restart xray
