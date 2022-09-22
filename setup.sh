@@ -292,7 +292,7 @@ echo "   - Full Orders For Various Services" | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "   >>> About " | tee -a log-install.txt
 echo "   - Script Presented By      : SandakanVPNTrickster" | tee -a log-install.txt" | tee -a log-install.txt
-echo "   - Contact (Only Text)      : t.me/SandakanVPNTrickster" | tee -a log-install.txt" | tee -a log-install.txt
+echo "   - Contact (Only Text)      : t.me/SandakanVPNTrickster" | tee -a log-install.txt
 echo "------------------------------------------------------------"
 echo ""
 echo "=============-[ SandakanVPNTrickster ]-==============="
