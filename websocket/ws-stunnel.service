@@ -1,5 +1,5 @@
 [Unit]
-Description=SSH Over Websocket Python By TausugClan
+Description=SSH Over Websocket Python By DediHumaedi
 Documentation=https://google.com
 After=network.target nss-lookup.target
 
