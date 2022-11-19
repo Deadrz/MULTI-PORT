@@ -240,7 +240,7 @@ if [ ! -f "/etc/log-create-user.log" ]; then
 echo "Log All Account " > /etc/log-create-user.log
 fi
 history -c
-serverV=$( curl -sS https://raw.githubusercontent.com/Deadrz/permission/main/version  )
+serverV=$( curl -sS https://raw.githubusercontent.com/Deadrz/MULTI-PORT/main/version  )
 echo $serverV > /opt/.ver
 aureb=$(cat /home/re_otm)
 b=11
@@ -291,8 +291,8 @@ echo "   - Backup & Restore Data" | tee -a log-install.txt
 echo "   - Full Orders For Various Services" | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "   >>> About " | tee -a log-install.txt
-echo "   - Script Presented By      : Deadrz" | tee -a log-install.txt" | tee -a log-install.txt
-echo "   - Contact (Only Text)      : t.me/Deadrz" | tee -a log-install.txt
+echo "   - Script Presented By      : Dedi Humaedi" | tee -a log-install.txt" | tee -a log-install.txt
+echo "   - Contact (Only Text)      : t.me/Putri24v" | tee -a log-install.txt
 echo "------------------------------------------------------------"
 echo ""
 echo "=============-[ Deadrz ]-==============="

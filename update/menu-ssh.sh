@@ -220,7 +220,7 @@ wget -q -O /usr/bin/proxy3.js "https://raw.githubusercontent.com/Deadrz/MULTI-PO
 cat <<EOF > /etc/systemd/system/sshws.service
 [Unit]
 Description=WSenabler
-Documentation=https://SSHSEDANG.MY.ID
+Documentation=https://SSHAXOR.MY.ID
 
 [Service]
 Type=simple
