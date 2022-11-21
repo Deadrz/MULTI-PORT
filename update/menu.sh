@@ -9,6 +9,7 @@ export RED="\033[0;31m"
 export COLOR1="$(cat /etc/alexxa/theme/$colornow | grep -w "TEXT" | cut -d: -f2|sed 's/ //g')"
 export COLBG1="$(cat /etc/alexxa/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"                    
 ###########- END COLOR CODE -##########
+
 tram=$( free -h | awk 'NR==2 {print $2}' )
 uram=$( free -h | awk 'NR==2 {print $3}' )
 #ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
