@@ -14,7 +14,7 @@ uram=$( free -h | awk 'NR==2 {print $3}' )
 #ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
 ISP=$(curl -s https://api.iplocation.net/?ip=139.59.109.49 | jq '.isp')
 #CITY=$(curl -s ipinfo.io/city )
-CITY$(curl -s https://api.iplocation.net/?ip=139.59.109.49 |  jq '.country_name')
+CITY$(curl -s https://api.iplocation.net/?ip=139.59.109.49 |  jq '.country_code2')
 
 
 BURIQ () {
