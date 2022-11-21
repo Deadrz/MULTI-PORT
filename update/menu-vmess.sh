@@ -308,16 +308,15 @@ maxis=`cat<<EOF
       {
       "v": "2",
       "ps": "${user}",
-      "add": "104.17.113.188",
-      "port": "443",
+      "add": "${domain}",
+      "port": "80",
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "wss://who.int/vmess",
+      "path": "/worryfree/vmess",
       "type": "none",
-      "host": "${domain}",
-      "tls": "tls",
-      "sni": "who.int"
+      "host": "",
+      "tls": "none"
 }
 EOF`
 celcom=`cat<<EOF
@@ -411,13 +410,18 @@ vmesslink5="vmess://$(echo $celcom | base64 -w 0)"
 vmesslink6="vmess://$(echo $digi | base64 -w 0)"
 vmesslink7="vmess://$(echo $yess | base64 -w 0)"
 
+echo "$vmesslink1" > /root/akun/vmess/vmesswstls-$user.txt
+echo "$vmesslink2" > /root/akun/vmess/vmesswsnontls-$user.txt
+echo "$vmesslink3" > /root/akun/vmess/vmessgrpc-$user.txt
+echo "$vmesslink4" > /root/akun/vmess/vmessworry-$user.txt
+
 systemctl restart xray > /dev/null 2>&1
 service cron restart > /dev/null 2>&1
 clear
-echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1─────────────────────────────────────────────────${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${COLBG1}            • CREATE VMESS USER •              ${NC} $COLOR1 $NC" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1─────────────────────────────────────────────────${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1─────────────────────────────────────────────────${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} Remarks       : ${user}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} Expired On    : $exp"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} Domain        : ${domain}"  | tee -a /etc/log-create-user.log
@@ -430,8 +434,8 @@ echo -e "$COLOR1 ${NC} Security      : auto"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} Network       : ws"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} Path          : /vmess" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ServiceName   : vmess-grpc"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1─────────────────────────────────────────────────${NC}"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1─────────────────────────────────────────────────${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} Link TLS : " | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${vmesslink1}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} " | tee -a /etc/log-create-user.log
@@ -441,21 +445,12 @@ echo -e "$COLOR1 ${NC} " | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} Link GRPC : " | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${vmesslink3}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} " | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} Maxis No Langgan : " | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} Link Worry : " | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${vmesslink4}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} " | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} Celcom NonLanggan / Expired : " | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${vmesslink5}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} " | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} Digi Booster : " | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${vmesslink6}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} " | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} Yes4G No Langgan / Expired : " | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${vmesslink7}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1─────────────────────────────────────────────────${NC}"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1────────────────────── BY ───────────────────────${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC}                • HayoSia Store •                 $COLOR1 $NC" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1─────────────────────────────────────────────────${NC}" | tee -a /etc/log-create-user.log
 echo "" | tee -a /etc/log-create-user.log
 
 read -n 1 -s -r -p "   Press any key to back on menu" | tee -a /etc/log-create-user.log
