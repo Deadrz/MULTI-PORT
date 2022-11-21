@@ -11,8 +11,10 @@ export COLBG1="$(cat /etc/alexxa/theme/$colornow | grep -w "BG" | cut -d: -f2|se
 ###########- END COLOR CODE -##########
 tram=$( free -h | awk 'NR==2 {print $2}' )
 uram=$( free -h | awk 'NR==2 {print $3}' )
-ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
-CITY=$(curl -s ipinfo.io/city )
+#ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
+ISP=$(curl -s https://api.iplocation.net/?ip=139.59.109.49 | jq '.isp')
+#CITY=$(curl -s ipinfo.io/city )
+CITY$(curl -s https://api.iplocation.net/?ip=139.59.109.49 |  jq '.country_name')
 
 
 BURIQ () {
