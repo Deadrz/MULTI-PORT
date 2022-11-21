@@ -283,16 +283,17 @@ sed -i '/#vlessgrpc$/a\#& '"$user $exp"'\
 vlesslink1="vless://${uuid}@${domain}:$tls?path=/vlessws&security=tls&encryption=none&type=ws#${user}"
 vlesslink2="vless://${uuid}@${domain}:$none?path=/vlessws&encryption=none&type=ws#${user}"
 vlesslink3="vless://${uuid}@${domain}:$tls?mode=gun&security=tls&encryption=none&type=grpc&serviceName=vless-grpc&sni=bug.com#${user}"
-maxis="vless://${uuid}@who.int:$tls?path=wss://who.int/vlessws&security=tls&encryption=none&type=ws&sni=who.int&host=${domain}#SquidVPN_Maxis_${user} exp : $exp"
-celcom="vless://${uuid}@onlinepayment.celcom.com.my:$tls?path=wss://onlinepayment.celcom.com.my/vlessws&security=tls&encryption=none&type=ws&sni=onlinepayment.celcom.com.my&host=${domain}#SquidVPN_Celcom_${user} exp : $exp"
-digi="vless://${uuid}@162.159.134.61:$none?path=/vlessws&encryption=none&type=ws&host=${domain}#SquidVPN_Digi_${user} exp : $exp"
-yess="vless://${uuid}@cdn.who.int:$none?path=wss://cdn.who.int/vlessws&encryption=none&type=ws&host=${domain}#SquidVPN_Digi_${user} exp : $exp"
+
+echo "$vlesslink1" > /root/akun/vless/vlesswstls-$user.txt
+echo "$vlesslink2" > /root/akun/vless/vlesswsnontls-$user.txt
+echo "$vlesslink3" > /root/akun/vless/vlessgrpc-$user.txt
+
 systemctl restart xray
 clear
-echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1─────────────────────────────────────────────────${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${COLBG1}            • CREATE VLESS USER •              ${NC} $COLOR1 $NC" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1─────────────────────────────────────────────────${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1─────────────────────────────────────────────────${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} Remarks       : ${user}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} Expired On    : $exp"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} Domain        : ${domain}"  | tee -a /etc/log-create-user.log
@@ -303,8 +304,8 @@ echo -e "$COLOR1 ${NC} Encryption    : none"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} Network       : ws"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} Path          : /vless" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} Path          : vless-grpc"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1─────────────────────────────────────────────────${NC}"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1─────────────────────────────────────────────────${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} Link TLS :" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${vlesslink1}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC}"   
@@ -313,21 +314,10 @@ echo -e "$COLOR1 ${NC} ${vlesslink2}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} Link GRPC : " | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${vlesslink3}"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} Maxis No Langgan / Expired : " | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${maxis}"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} Celcom No Langgan  : " | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${celcom}"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} Digi Booster : " | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${digi}"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} Yes4G No Langgan / Expired : " | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${yess}"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC}                • 𝕊𝔸ℕ𝔻𝔸𝕂𝔸ℕ 𝕍ℙℕ •                 $COLOR1 $NC" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1─────────────────────────────────────────────────${NC}"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1────────────────────── BY ───────────────────────${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}                • HayoSia Store •                 $COLOR1 $NC" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1─────────────────────────────────────────────────${NC}" | tee -a /etc/log-create-user.log
 echo ""  | tee -a /etc/log-create-user.log
 read -n 1 -s -r -p "   Press any key to back on menu" | tee -a /etc/log-create-user.log
 menu-vless

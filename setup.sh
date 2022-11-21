@@ -306,6 +306,12 @@ rm /root/update.sh
 secs_to_human "$(($(date +%s) - ${start}))" | tee -a log-install.txt
 echo -e "
 "
+mkdir ~/akun
+mkdir ~/akun/tr
+mkdir ~/akun/vmess
+mkdir ~/akun/vless
+mkdir ~/akun/ss
+
 echo -ne "[ ${yell}WARNING${NC} ] Do you want to reboot now ? (y/n)? "
 read answer
 if [ "$answer" == "${answer#[Yy]}" ] ;then
