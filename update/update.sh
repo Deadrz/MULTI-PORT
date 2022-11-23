@@ -23,6 +23,7 @@ wget -q -O /usr/bin/menu-dns "https://raw.githubusercontent.com/Deadrz/MULTI-POR
 wget -q -O /usr/bin/info "https://raw.githubusercontent.com/Deadrz/MULTI-PORT/main/update/info.sh" && chmod +x /usr/bin/info
 wget -q -O /usr/bin/mspeed "https://raw.githubusercontent.com/Deadrz/MULTI-PORT/main/update/menu-speedtest.sh" && chmod +x /usr/bin/mspeed
 wget -q -O /usr/bin/mbandwith "https://raw.githubusercontent.com/Deadrz/MULTI-PORT/main/update/menu-bandwith.sh" && chmod +x /usr/bin/mbandwith
+wget -q -O /usr/bin/addtr "https://raw.githubusercontent.com/Deadrz/MULTI-PORT/main/update/addtr.sh" && chmod +x /usr/bin/addtr
 wget -q -O /usr/bin/update "https://raw.githubusercontent.com/Deadrz/MULTI-PORT/main/update/update.sh" && chmod +x /usr/bin/update
 echo -e " [INFO] Update Successfully"
 sleep 2
