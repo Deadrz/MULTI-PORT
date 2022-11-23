@@ -9,13 +9,12 @@ export RED="\033[0;31m"
 export COLOR1="$(cat /etc/alexxa/theme/$colornow | grep -w "TEXT" | cut -d: -f2|sed 's/ //g')"
 export COLBG1="$(cat /etc/alexxa/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"                    
 ###########- END COLOR CODE -##########
-
 tram=$( free -h | awk 'NR==2 {print $2}' )
 uram=$( free -h | awk 'NR==2 {print $3}' )
 #ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
-ISP=$(curl -s https://api.iplocation.net/?ip=139.59.109.49 | jq '.isp')
+ISP=$(curl -s https://ipapi.co/139.59.109.49/org)
 #CITY=$(curl -s ipinfo.io/city )
-CITY=$(curl -s https://api.iplocation.net/?ip=139.59.109.49 |  jq '.country_code2')
+CITY=$(curl -s https://ipapi.co/139.59.109.49/city)
 
 BURIQ () {
     curl -sS https://raw.githubusercontent.com/Deadrz/ip/main/access > /root/tmp

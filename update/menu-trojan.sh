@@ -279,7 +279,7 @@ trojan-menu
 fi
 done
 uuid=$(cat /proc/sys/kernel/random/uuid)
-read -p "   Expired (days): " masaaktif
+read -p "   Expired: " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#trojanws$/a\#! '"$user $exp"'\
 },{"password": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
