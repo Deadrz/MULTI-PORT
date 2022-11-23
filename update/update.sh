@@ -4,6 +4,11 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 ###########- COLOR CODE -##############
 echo -e " [INFO] Downloading Update File"
 sleep 2
+mkdir ~/akun
+mkdir ~/akun/tr
+mkdir ~/akun/vmess
+mkdir ~/akun/vless
+mkdir ~/akun/ss
 wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/Deadrz/MULTI-PORT/main/update/menu.sh" && chmod +x /usr/bin/menu
 wget -q -O /usr/bin/menu-ss "https://raw.githubusercontent.com/Deadrz/MULTI-PORT/main/update/menu-ss.sh" && chmod +x /usr/bin/menu-ss
 wget -q -O /usr/bin/menu-vmess "https://raw.githubusercontent.com/Deadrz/MULTI-PORT/main/update/menu-vmess.sh" && chmod +x /usr/bin/menu-vmess
